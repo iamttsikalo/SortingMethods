@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify 
 
 app = Flask(__name__)
 
-# --- Алгоритми сортування ---
 
 def bubble_sort(arr):
     n = len(arr)
@@ -21,7 +20,6 @@ def quick_sort(arr):
     right = [x for x in arr if x > pivot]
     return quick_sort(left) + middle + quick_sort(right)
 
-# --- Маршрути Flask ---
 
 @app.route('/')
 def index():
@@ -34,7 +32,6 @@ def sort_numbers():
     method = data.get('method', 'bubble')
 
     try:
-        # Перетворюємо рядок у список чисел
         numbers = [int(n.strip()) for n in raw_numbers.split(',') if n.strip()]
         
         if not numbers:
@@ -58,7 +55,5 @@ def sort_numbers():
     except ValueError:
         return jsonify({'error': 'Вводь тільки числа через кому!'}), 400
 
-# --- Блок запуску ---
 if __name__ == '__main__':
-    print("Сервер запускається на http://127.0.0.1:5000")
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)

@@ -14,7 +14,7 @@
     <main>
         <section class="input-section">
             <label for="numbersInput">Введіть числа через кому:</label>
-            <input type="text" id="numbersInput" placeholder="Наприклад: 42, 12, 8, 3, 25">
+            <input type="text" id="numbersInput" placeholder="">
             
             <div class="button-group">
                 <button onclick="sendToPython('bubble')" class="btn-sort">Бульбашка (Bubble Sort)</button>
@@ -30,9 +30,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Лабораторна робота з алгоритмів</p>
     </footer>
 
-    <<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
